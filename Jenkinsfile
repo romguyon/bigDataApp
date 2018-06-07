@@ -24,7 +24,7 @@ pipeline {
 		/* Ideally, we would run a test framework against our image.
 		 * For this example, we're using a Volkswagen-type approach ;-) */
 			agent any
-			steps {}
+
 
 		}
 
@@ -35,12 +35,7 @@ pipeline {
 		 * Pushing multiple tags is cheap, as all the layers are reused. */
 
 			agent any
-			steps {
-
-				docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
-					sh 'docker push rguyon/test:latest'
-				}
-			}
+	
 		}
 
 	}
